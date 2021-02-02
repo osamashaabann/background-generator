@@ -1,0 +1,142 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(-45deg, #338d1d	, #079292, #598f59	, #006400);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    min-height: 100vh;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+h1{
+    text-shadow: 0px 14px 28px rgba(0, 0, 0, 0.25),
+    0px 10px 10px rgba(0, 0, 0, 0.22) ;
+    font-size: 44px;
+    margin: 40px 0;
+    color: #fff;
+}
+
+ .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 360px;
+    width: 360px;
+    position: relative;
+    transform: scale(1);
+    color: #fff;
+    font-weight: bold;
+}
+.gradient-circle {
+    background: conic-gradient(
+        #55b7a4 0%,
+        #55b7a4 40%,
+
+        #fff 40%,
+        #fff 60%,
+
+        #336d62 60%,
+        #336d62 100%
+    );
+    position: absolute;
+    height: 340px;
+    width: 340px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0px 14px 28px rgba(0, 0, 0, 0.25),
+    0px 10px 10px rgba(0, 0, 0, 0.22) ;
+    z-index: -2;
+}
+
+.circle{
+    position: absolute;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 320px;
+    width: 320px;
+    background-color: #021322;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.pointer-container{ 
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    width: 25px;
+    height: 180px;
+    animation: animate 7.5s linear forwards infinite;
+    transform-origin: bottom center; 
+}
+
+.pointer{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: -25px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0px 14px 28px rgba(0, 0, 0, 0.13),
+    0px 10px 10px rgba(0, 0, 0, 0.13) ;
+} 
+
+.container.grow{
+    animation: grow 3s linear forwards;
+}
+
+.container.shrink{
+    animation: shrink 3s linear forwards;
+}
+
+@keyframes animate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes grow {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes shrink {
+
+    from {
+        transform: scale(1.2);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
